@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RKstore — Next-Gen Tech</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-left { animation: fadeLeft 0.7s ease both; }
+    .hero-right { animation: fadeUp 0.7s 0.2s ease both; }
+
+    /* Image showcase core */
+    .showcase-core img {
+      width: 130px;
+      height: 130px;
+      object-fit: contain;
+      transition: all 0.35s;
+      filter: drop-shadow(0 0 18px rgba(0,200,255,0.25));
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="home.html" class="logo">
+    <div class="logo-icon">⚡</div>
+    <span class="logo-text">RK<span>store</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="home.html" class="active">Home</a>
+    <a href="products.php">Products</a>
+    <a href="dashboard.php">Dashboard</a>
+    <a href="cart.html" class="nav-cart">🛒<span class="cart-badge">3</span></a>
+    <a href="login.php" class="nav-btn">Login</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="dot"></span> SYSTEM ONLINE — NEW DROPS AVAILABLE
+    </div>
+    <h1>
+      <span class="h1-line1">BUILD YOUR</span>
+      <span class="h1-line2">ULTIMATE RIG.</span>
+      <span class="h1-line3">DOMINATE.</span>
+    </h1>
+    <p class="hero-sub">
+      Premium GPUs, peripherals, displays, and audio gear — handpicked for gamers, creators, and builders who refuse to settle.
+    </p>
+    <div class="hero-actions">
+      <a href="products.php" class="btn btn-primary btn-lg">Shop Now →</a>
+      <a href="dashboard.php" class="btn btn-outline btn-lg">My Dashboard</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Products</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">12K+</div>
+        <div class="hero-stat-label">Happy Buyers</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">4.9★</div>
+        <div class="hero-stat-label">Avg Rating</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="showcase-wrap">
+      <div class="ring ring-1"></div>
+      <div class="ring ring-2"></div>
+      <div class="ring ring-3"></div>
+      <div class="showcase-core" id="sc-core">
+        <!-- Now shows real product image instead of emoji -->
+        <img id="sc-img" src="GPU.jpg" alt="Product">
+        <span class="sc-name" id="sc-name">RTX 4060 GPU</span>
+        <span class="sc-price" id="sc-price">₱18,500</span>
+      </div>
+      <div class="float-pill fp-a">
+        <div class="fp-label">Stock</div>
+        <div class="fp-val">✓ In Stock</div>
+      </div>
+      <div class="float-pill fp-b">
+        <div class="fp-label">Delivery</div>
+        <div class="fp-val">2–3 Days</div>
+      </div>
+      <div class="float-pill fp-c">
+        <div class="fp-label">Rating</div>
+        <div class="fp-val">★ 4.9/5.0</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="t-item"><span class="t-name">RTX 4060</span>&nbsp;<span class="t-price">₱18,500</span>&nbsp;<span class="t-tag">↑ HOT</span></div>
+    <div class="t-item"><span class="t-name">Mech Keyboard</span>&nbsp;<span class="t-price">₱2,200</span>&nbsp;<span class="t-tag">↑ NEW</span></div>
+    <div class="t-item"><span class="t-name">Gaming Monitor</span>&nbsp;<span class="t-price">₱12,000</span>&nbsp;<span class="t-tag down">↓ SALE</span></div>
+    <div class="t-item"><span class="t-name">Gaming Mouse</span>&nbsp;<span class="t-price">₱1,800</span>&nbsp;<span class="t-tag">↑ NEW</span></div>
+    <div class="t-item"><span class="t-name">Headset Pro</span>&nbsp;<span class="t-price">₱3,500</span>&nbsp;<span class="t-tag">↑ HOT</span></div>
+    <div class="t-item"><span class="t-name">RTX 4070 Super</span>&nbsp;<span class="t-price">₱32,000</span>&nbsp;<span class="t-tag">↑ PRE-ORDER</span></div>
+    <div class="t-item"><span class="t-name">Ultrawide 34"</span>&nbsp;<span class="t-price">₱28,500</span>&nbsp;<span class="t-tag down">↓ DEAL</span></div>
+    <div class="t-item"><span class="t-name">RTX 4060</span>&nbsp;<span class="t-price">₱18,500</span>&nbsp;<span class="t-tag">↑ HOT</span></div>
+    <div class="t-item"><span class="t-name">Mech Keyboard</span>&nbsp;<span class="t-price">₱2,200</span>&nbsp;<span class="t-tag">↑ NEW</span></div>
+    <div class="t-item"><span class="t-name">Gaming Monitor</span>&nbsp;<span class="t-price">₱12,000</span>&nbsp;<span class="t-tag down">↓ SALE</span></div>
+    <div class="t-item"><span class="t-name">Gaming Mouse</span>&nbsp;<span class="t-price">₱1,800</span>&nbsp;<span class="t-tag">↑ NEW</span></div>
+    <div class="t-item"><span class="t-name">Headset Pro</span>&nbsp;<span class="t-price">₱3,500</span>&nbsp;<span class="t-tag">↑ HOT</span></div>
+    <div class="t-item"><span class="t-name">RTX 4070 Super</span>&nbsp;<span class="t-price">₱32,000</span>&nbsp;<span class="t-tag">↑ PRE-ORDER</span></div>
+    <div class="t-item"><span class="t-name">Ultrawide 34"</span>&nbsp;<span class="t-price">₱28,500</span>&nbsp;<span class="t-tag down">↓ DEAL</span></div>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="section">
+  <div class="sec-head">
+    <div>
+      <div class="sec-label">// Browse by Type</div>
+      <div class="sec-title">Shop by Category</div>
+    </div>
+  </div>
+  <div class="cat-grid">
+    <a href="products.php" class="cat-card anim-fadeup d1">
+      <span class="cat-emoji">🎮</span>
+      <div class="cat-name">GPUs</div>
+      <div class="cat-count">2 items</div>
+    </a>
+    <a href="products.php" class="cat-card anim-fadeup d2">
+      <span class="cat-emoji">⌨️</span>
+      <div class="cat-name">Peripherals</div>
+      <div class="cat-count">3 items</div>
+    </a>
+    <a href="products.php" class="cat-card anim-fadeup d3">
+      <span class="cat-emoji">🖥️</span>
+      <div class="cat-name">Displays</div>
+      <div class="cat-count">2 items</div>
+    </a>
+    <a href="products.php" class="cat-card anim-fadeup d4">
+      <span class="cat-emoji">🎧</span>
+      <div class="cat-name">Audio</div>
+      <div class="cat-count">1 item</div>
+    </a>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="section" style="padding-top:0;">
+  <div class="sec-head">
+    <div>
+      <div class="sec-label">// Top Picks</div>
+      <div class="sec-title">Featured Products</div>
+    </div>
+    <a href="products.php" class="btn btn-ghost btn-sm">View All →</a>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="product-card anim-fadeup d1">
+      <div class="product-img-area">
+        <div class="p-badges"><span class="badge b-hot">Hot</span></div>
+        <img src="GPU.jpg" alt="RTX 4060" style="width:200px;height:160px;object-fit:contain;position:relative;z-index:1;">
+      </div>
+      <div class="product-body">
+        <div class="p-cat">GPU</div>
+        <div class="p-name">RTX 4060 GPU</div>
+        <div class="p-specs">
+          <span class="spec">12GB GDDR6</span>
+          <span class="spec">DLSS 3.0</span>
+          <span class="spec">Ray Tracing</span>
+        </div>
+        <div class="p-footer">
+          <div>
+            <span class="p-old-price">₱19,999</span>
+            <div class="p-price">₱18,500</div>
+          </div>
+          <a href="cart.html" class="btn btn-primary btn-sm">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card anim-fadeup d2">
+      <div class="product-img-area">
+        <div class="p-badges"><span class="badge b-new">New</span></div>
+        <img src="ASkeyboard.png" alt="Attack Shark Keyboard" style="width:200px;height:160px;object-fit:contain;position:relative;z-index:1;">
+      </div>
+      <div class="product-body">
+        <div class="p-cat">Peripheral</div>
+        <div class="p-name">Attack Shark X85 Pro Keyboard</div>
+        <div class="p-specs">
+          <span class="spec">TKL</span>
+          <span class="spec">Creamy Sound</span>
+          <span class="spec">RGB</span>
+        </div>
+        <div class="p-footer">
+          <div class="p-price">₱2,200</div>
+          <a href="cart.html" class="btn btn-primary btn-sm">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card anim-fadeup d3">
+      <div class="product-img-area">
+        <div class="p-badges"><span class="badge b-sale">Sale</span></div>
+        <img src="Asusgamingmonitor.jpg" alt="ASUS TUF Gaming Monitor" style="width:200px;height:160px;object-fit:contain;position:relative;z-index:1;">
+      </div>
+      <div class="product-body">
+        <div class="p-cat">Display</div>
+        <div class="p-name">ASUS TUF Gaming Monitor 27"</div>
+        <div class="p-specs">
+          <span class="spec">180Hz</span>
+          <span class="spec">IPS</span>
+          <span class="spec">1ms</span>
+        </div>
+        <div class="p-footer">
+          <div>
+            <span class="p-old-price">₱14,500</span>
+            <div class="p-price">₱12,000</div>
+          </div>
+          <a href="cart.html" class="btn btn-primary btn-sm">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-card anim-fadeup d4">
+      <div class="product-img-area">
+        <img src="Attacksharkmouse.jpg" alt="Attack Shark X6 Mouse" style="width:200px;height:160px;object-fit:contain;position:relative;z-index:1;">
+      </div>
+      <div class="product-body">
+        <div class="p-cat">Peripheral</div>
+        <div class="p-name">Attack Shark X6 Gaming Mouse</div>
+        <div class="p-specs">
+          <span class="spec">16000 DPI</span>
+          <span class="spec">Wireless</span>
+          <span class="spec">RGB Dock</span>
+        </div>
+        <div class="p-footer">
+          <div class="p-price">₱1,800</div>
+          <a href="cart.html" class="btn btn-primary btn-sm">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROMO BANNER -->
+<div class="promo-banner">
+  <div>
+    <div class="promo-tag">⚡ Limited Time Offer</div>
+    <div class="promo-title">Get <span>Free Shipping</span><br>on Orders Over ₱5,000</div>
+    <div class="promo-desc">Use code <span class="promo-code">RKFREE</span> at checkout. Valid this week only.</div>
+  </div>
+  <a href="products.php" class="btn btn-orange btn-lg">Grab the Deal →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="home.html" class="logo">
+        <div class="logo-icon">⚡</div>
+        <span class="logo-text">RK<span>store</span></span>
+      </a>
+      <p>Your one-stop shop for premium PC hardware, gaming peripherals, and the latest tech. Built for builders.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="products.php">All Products</a>
+      <a href="products.php">GPUs</a>
+      <a href="products.php">Peripherals</a>
+      <a href="products.php">Displays</a>
+      <a href="products.php">Audio</a>
+    </div>
+    <div class="footer-col">
+      <h4>Account</h4>
+      <a href="login.php">Login</a>
+      <a href="register.php">Register</a>
+      <a href="dashboard.php">Dashboard</a>
+      <a href="cart.html">My Cart</a>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <a href="#">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Shipping Policy</a>
+      <a href="#">Returns</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 RKSTORE — ALL RIGHTS RESERVED</div>
+    <div class="footer-copy">HTML &amp; CSS — WEB SYSTEMS &amp; TECHNOLOGIES 2</div>
+  </div>
+</footer>
+
+<script>
+  // Hero showcase now rotates real product images
+  const products = [
+    { img: 'GPU.jpg',                   name: 'RTX 4060 GPU',          price: '₱18,500' },
+    { img: 'GPU4070.jpg',               name: 'RTX 4070 Super',        price: '₱32,000' },
+    { img: 'ASkeyboard.png',            name: 'Attack Shark Keyboard',  price: '₱2,200'  },
+    { img: 'Attacksharkmouse.jpg',      name: 'Attack Shark X6 Mouse',  price: '₱1,800'  },
+    { img: 'Asusgamingmonitor.jpg',     name: 'ASUS TUF Monitor',       price: '₱12,000' },
+    { img: 'Nvisionultrawidemonitor.jpg', name: 'Nvision Ultrawide 34"', price: '₱28,500' },
+    { img: 'Fantechheadset_jpg.jpg',    name: 'Fantech HQ54 Headset',   price: '₱3,500'  },
+  ];
+
+  let idx = 0;
+  setInterval(() => {
+    idx = (idx + 1) % products.length;
+    const p = products[idx];
+    const core = document.getElementById('sc-core');
+    core.style.opacity = '0';
+    core.style.transform = 'scale(0.9)';
+    core.style.transition = 'all 0.3s';
+    setTimeout(() => {
+      document.getElementById('sc-img').src = p.img;
+      document.getElementById('sc-img').alt = p.name;
+      document.getElementById('sc-name').textContent = p.name;
+      document.getElementById('sc-price').textContent = p.price;
+      core.style.opacity = '1';
+      core.style.transform = 'scale(1)';
+    }, 300);
+  }, 2600);
+</script>
+
+</body>
+</html>

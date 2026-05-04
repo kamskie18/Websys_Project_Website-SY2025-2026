@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RKstore — Cart</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="home.html" class="logo">
+    <div class="logo-icon">⚡</div>
+    <span class="logo-text">RK<span>store</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="home.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="cart.html" class="nav-cart active">🛒<span class="cart-badge">3</span></a>
+    <a href="login.html" class="nav-btn">Login</a>
+  </div>
+</nav>
+
+<div class="cart-wrap">
+
+  <!-- ITEMS -->
+  <div>
+    <div class="cart-title">Your Cart <span class="cart-count" id="item-count">(3 items)</span></div>
+
+    <div class="cart-item" id="ci-1">
+      <div class="cart-thumb">🎮</div>
+      <div class="cart-info">
+        <div class="cart-item-cat">GPU</div>
+        <div class="cart-item-name">RTX 4060 GPU</div>
+        <div class="cart-item-specs">12GB GDDR6 · DLSS 3.0 · Ray Tracing</div>
+      </div>
+      <div class="cart-controls">
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty('ci-1', -1, 18500)">−</button>
+          <span class="qty-num" id="qty-ci-1">1</span>
+          <button class="qty-btn" onclick="changeQty('ci-1', 1, 18500)">+</button>
+        </div>
+        <div class="cart-item-price" id="price-ci-1">₱18,500</div>
+        <button class="remove-btn" onclick="removeItem('ci-1')" title="Remove">🗑</button>
+      </div>
+    </div>
+
+    <div class="cart-item" id="ci-2">
+      <div class="cart-thumb">⌨️</div>
+      <div class="cart-info">
+        <div class="cart-item-cat">Peripheral</div>
+        <div class="cart-item-name">Mechanical Keyboard</div>
+        <div class="cart-item-specs">TKL · Blue Switch · RGB Backlit</div>
+      </div>
+      <div class="cart-controls">
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty('ci-2', -1, 2200)">−</button>
+          <span class="qty-num" id="qty-ci-2">1</span>
+          <button class="qty-btn" onclick="changeQty('ci-2', 1, 2200)">+</button>
+        </div>
+        <div class="cart-item-price" id="price-ci-2">₱2,200</div>
+        <button class="remove-btn" onclick="removeItem('ci-2')" title="Remove">🗑</button>
+      </div>
+    </div>
+
+    <div class="cart-item" id="ci-3">
+      <div class="cart-thumb">🖥️</div>
+      <div class="cart-info">
+        <div class="cart-item-cat">Display</div>
+        <div class="cart-item-name">Gaming Monitor 27"</div>
+        <div class="cart-item-specs">144Hz · IPS · 1ms Response</div>
+      </div>
+      <div class="cart-controls">
+        <div class="qty-row">
+          <button class="qty-btn" onclick="changeQty('ci-3', -1, 12000)">−</button>
+          <span class="qty-num" id="qty-ci-3">2</span>
+          <button class="qty-btn" onclick="changeQty('ci-3', 1, 12000)">+</button>
+        </div>
+        <div class="cart-item-price" id="price-ci-3">₱24,000</div>
+        <button class="remove-btn" onclick="removeItem('ci-3')" title="Remove">🗑</button>
+      </div>
+    </div>
+
+    <div style="margin-top: 28px; display: flex; gap: 12px;">
+      <a href="products.html" class="btn btn-ghost btn-sm">← Continue Shopping</a>
+      <button onclick="clearAll()" class="btn btn-danger btn-sm">Clear Cart</button>
+    </div>
+  </div>
+
+  <!-- ORDER SUMMARY -->
+  <div class="order-summary-card">
+    <div class="os-title">Order Summary</div>
+
+    <div class="os-row"><span>RTX 4060 GPU × <span id="sq-1">1</span></span><span id="sp-1">₱18,500</span></div>
+    <div class="os-row"><span>Mech Keyboard × <span id="sq-2">1</span></span><span id="sp-2">₱2,200</span></div>
+    <div class="os-row"><span>Gaming Monitor × <span id="sq-3">2</span></span><span id="sp-3">₱24,000</span></div>
+    <div class="os-divider"></div>
+    <div class="os-row"><span>Subtotal</span><span id="subtotal-val">₱44,700</span></div>
+    <div class="os-row"><span>Shipping</span><span class="os-free" id="ship-label">FREE</span></div>
+    <div class="os-row" id="promo-row" style="display:none;"><span>Discount</span><span style="color:#00ff88;" id="promo-amt">—</span></div>
+    <div class="os-divider"></div>
+    <div class="os-total-row">
+      <span class="os-total-label">Total</span>
+      <span class="os-total-val" id="total-val">₱44,700</span>
+    </div>
+
+    <div class="promo-input-wrap">
+      <input type="text" class="promo-input" id="promo-input" placeholder="Promo code (try RKFREE)">
+      <button onclick="applyPromo()" class="btn btn-ghost btn-sm">Apply</button>
+    </div>
+
+    <a href="#" class="btn btn-primary btn-full btn-lg">Checkout →</a>
+    <div class="os-secure">🔒 SECURED · FREE RETURNS · 7-DAY POLICY</div>
+  </div>
+
+</div>
+
+<script>
+  const state = {
+    'ci-1': { qty: 1,  unit: 18500, removed: false },
+    'ci-2': { qty: 1,  unit: 2200,  removed: false },
+    'ci-3': { qty: 2,  unit: 12000, removed: false },
+  };
+  const sqMap = { 'ci-1': '1', 'ci-2': '2', 'ci-3': '3' };
+  let discount = 0;
+
+  function fmt(n) { return '₱' + n.toLocaleString(); }
+
+  function recalc() {
+    let sub = 0;
+    Object.entries(state).forEach(([id, item]) => {
+      if (!item.removed) sub += item.qty * item.unit;
+    });
+    const total = sub - discount;
+    document.getElementById('subtotal-val').textContent = fmt(sub);
+    document.getElementById('total-val').textContent = fmt(total);
+    document.getElementById('ship-label').textContent = sub >= 5000 ? 'FREE' : '₱150';
+
+    const count = Object.values(state).filter(i => !i.removed).reduce((a, i) => a + i.qty, 0);
+    document.getElementById('item-count').textContent = `(${count} item${count !== 1 ? 's' : ''})`;
+  }
+
+  function changeQty(id, delta, unit) {
+    const item = state[id];
+    item.qty = Math.max(1, item.qty + delta);
+    document.getElementById('qty-' + id).textContent = item.qty;
+    document.getElementById('price-' + id).textContent = fmt(item.qty * item.unit);
+    const s = sqMap[id];
+    document.getElementById('sq-' + s).textContent = item.qty;
+    document.getElementById('sp-' + s).textContent = fmt(item.qty * item.unit);
+    recalc();
+  }
+
+  function removeItem(id) {
+    const el = document.getElementById(id);
+    el.style.transition = 'opacity 0.3s, transform 0.3s';
+    el.style.opacity = '0';
+    el.style.transform = 'translateX(-20px)';
+    setTimeout(() => el.remove(), 300);
+    state[id].removed = true;
+    recalc();
+  }
+
+  function clearAll() {
+    Object.keys(state).forEach(id => {
+      if (!state[id].removed) removeItem(id);
+    });
+  }
+
+  function applyPromo() {
+    const code = document.getElementById('promo-input').value.trim().toUpperCase();
+    let sub = 0;
+    Object.values(state).filter(i => !i.removed).forEach(i => sub += i.qty * i.unit);
+    if (code === 'RKFREE' || code === 'SAVE10') {
+      discount = Math.round(sub * 0.1);
+      document.getElementById('promo-row').style.display = 'flex';
+      document.getElementById('promo-amt').textContent = '−' + fmt(discount);
+      recalc();
+    } else {
+      alert('Invalid code. Try RKFREE or SAVE10.');
+    }
+  }
+</script>
+
+</body>
+</html>
